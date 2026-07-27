@@ -15,9 +15,9 @@ const registerUserIntoDB=async(payload: RegisterUserPayload)=>{
         }
     })
 
-    if(isUserExist){
-        throw new Error("User with this email already exists");
-    }
+    // if(isUserExist){
+    //     throw new Error("User with this email already exists");
+    // }
 
 
 
