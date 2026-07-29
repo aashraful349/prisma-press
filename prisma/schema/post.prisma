@@ -2,13 +2,15 @@ model Post {
   id         String     @id @default(uuid())
   title      String     @db.VarChar(255)
   content    String     @db.Text
-  thumbnail  String?    
+  thumbnail  String?
   isFeatured Boolean    @default(false)
   status     PostStatus @default(PUBLISHED)
   tags       String[]
   views      Int        @default(0)
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
+
+  isPremium Boolean @default(false)
 
   authorId String
   author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)

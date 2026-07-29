@@ -51,9 +51,9 @@ export const globalErrorHandler = (
   res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
     success: false,
     statusCode: statusCode || httpStatus.INTERNAL_SERVER_ERROR,
+    name: errName,
     message: errorMessage,
     // errorCode: err.code || null,
-    name: errName,
     error: err.stack,
   });
 };
